@@ -11,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131115233747) do
+ActiveRecord::Schema.define(:version => 20131116013540) do
+
+  create_table "albums", :force => true do |t|
+    t.string   "title"
+    t.integer  "transition_time"
+    t.boolean  "public"
+    t.string   "category"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "sources", :force => true do |t|
+    t.string   "url"
+    t.integer  "number_post"
+    t.boolean  "active"
+    t.integer  "album_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "sources", ["album_id"], :name => "index_sources_on_album_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
