@@ -1,5 +1,13 @@
 Slidedash::Application.routes.draw do
 
+  get "albums/indew"
+
+  get "albums/show"
+
+  get "albums/new"
+
+  get "albums/edit"
+
   devise_for :users
 
   get "welcome/index"
@@ -7,6 +15,12 @@ Slidedash::Application.routes.draw do
   get "welcome/about"
 
   root to:'welcome#index'
+
+  resources :albums do 
+    resources :sources
+  end
+
+  get "/:user_id", to: "albums#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

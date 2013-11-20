@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
+
+rand(10..30).times do
+  a = Album.create(title: Faker::Lorem.words(rand(1..10)).join(" "))
+  rand(3..10).times do
+    a.sources.create(url: Faker::Lorem.paragraphs(rand(1..10)).join("\n"))
+  end
+end
+
+puts "Seed finished"
+puts "#{Album.count} albums created"
+puts "#{Source.count} sources created"
