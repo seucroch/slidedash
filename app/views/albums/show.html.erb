@@ -1,1 +1,4 @@
-<h1><%= @albums.title %></h1>
+<h1>Title: <%= @albums.title %></h1>
+<h2>Transition time: <%= @albums.transition_time  %></h2>
+<%= link_to "Edit", edit_album_path(@albums), class: 'btn btn-mini' %>
+
