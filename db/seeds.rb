@@ -19,10 +19,11 @@ rand(4..10).times do
   u.save
 
 rand(10..30).times do
-  a = Album.create(title: Faker::Lorem.words(rand(1..10)).join(" "))
+  a = Album.create(title: Faker::Lorem.words(rand(1..10)).join(" ")) 
   a.update_attribute(:user_id, rand(2..5))
+  a.update_attribute(:transition_time, rand(500..1000))
   rand(3..10).times do
-    a.sources.create(url: Faker::Lorem.paragraphs(rand(1..10)).join("\n"))
+    a.sources.create(url: Faker::Lorem.words(rand(1..3)).join("\n"))
     end
   end
 end

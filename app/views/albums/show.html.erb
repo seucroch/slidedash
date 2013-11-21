@@ -1,6 +1,17 @@
-<h1>Title: <%= @albums.title %></h1>
-<h2>Transition time: <%= @albums.transition_time  %></h2>
-<h2>Category: <%= @albums.category  %></h2>
+<h1>Title: <%= @album.title %></h1>
+<h2>Transition time: <%= @album.transition_time  %></h2>
+<h2>Category: <%= @album.category  %></h2>
 
-<%= link_to "Edit", edit_album_path(@albums), class: 'btn btn-mini' %>
+  <% for source in @sources %>
+    <div class="media">
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= source.url %>
+        </h4>
+      
+      </div>
+    </div>
+  <% end %>
 
+
+<%= link_to "Edit", edit_album_path(@album), class: 'btn btn-mini' %>

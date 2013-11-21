@@ -1,18 +1,6 @@
 Slidedash::Application.routes.draw do
 
-  get "show/index"
 
-  get "show/new"
-
-  get "show/edit"
-
-  get "albums/indew"
-
-  get "albums/show"
-
-  get "albums/new"
-
-  get "albums/edit"
 
   devise_for :users
 

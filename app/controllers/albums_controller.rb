@@ -1,15 +1,17 @@
 class AlbumsController < ApplicationController
   def index
     @albums = Album.all
-    
   end
 
   def show
-    @albums = Album.find(params[:id])
+    @album = Album.find(params[:id])
+    @sources = @album.sources
+    @source = Source.new
   end
 
   def new
-    @album = Album.new   
+    @album = Album.new  
+    10.times { @album.sources.build} 
   end
 
   def create
@@ -24,7 +26,7 @@ class AlbumsController < ApplicationController
   end
 
   def edit
-    @album= Album.find(params[:id])
+    @album = Album.find(params[:id])
   end
 
   def update

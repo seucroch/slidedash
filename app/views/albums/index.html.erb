@@ -6,7 +6,7 @@
         <%= link_to album.title, album %>
       </h4>
       <small>
-        submitted <%= time_ago_in_words(album.created_at) %> ago by <%= (album.user_id) %><br/>
+        submitted <%= time_ago_in_words(album.created_at) %> ago by <%= album.user.name %><br/>
       
       </small>
     </div>
