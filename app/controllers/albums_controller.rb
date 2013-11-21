@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
   def index
     @albums = Album.all
+    
   end
 
   def show
@@ -12,8 +13,7 @@ class AlbumsController < ApplicationController
   end
 
   def create
-  @album = Album.new(params[:album])
-    
+  @album = current_user.albums.build(params[:album])
     if @album.save
       flash[:notice] = "Album was saved."
       redirect_to @album

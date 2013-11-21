@@ -5,6 +5,10 @@
       <h4 class="media-heading">
         <%= link_to album.title, album %>
       </h4>
+      <small>
+        submitted <%= time_ago_in_words(album.created_at) %> ago by <%= (album.user_id) %><br/>
+      
+      </small>
     </div>
   </div>
 <% end %>
