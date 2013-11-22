@@ -31,7 +31,7 @@ class AlbumsController < ApplicationController
 
   def update
     @album = Album.find(params[:id])
-    if @album.update_attributes(params[:post])
+    if @album.update_attributes(params[:album])
       flash[:notice] = "Album was updated."
       redirect_to @album
     else

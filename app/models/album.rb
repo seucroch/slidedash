@@ -6,7 +6,7 @@ class Album < ActiveRecord::Base
   belongs_to :user
   
 
-  attr_accessible :category, :public, :title, :transition_time, :sources
+  attr_accessible :category, :public, :title, :transition_time, :sources_attributes
 
    default_scope order('created_at DESC')
 end
