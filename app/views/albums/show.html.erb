@@ -13,5 +13,6 @@
     </div>
   <% end %>
 
-
-<%= link_to "Edit", edit_album_path(@album), class: 'btn btn-mini' %>
+  <% if can? :edit, @album %>
+    <%= link_to "Edit", edit_album_path(@album), class: 'btn btn-mini' %>
+  <% end %>

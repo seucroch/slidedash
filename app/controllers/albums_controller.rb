@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
   def index
     @albums = Album.all
+
   end
 
   def show
@@ -10,12 +11,14 @@ class AlbumsController < ApplicationController
   end
 
   def new
-    @album = Album.new  
+    @album = Album.new 
+    authorize! :create, Album, message: "You need to be a member to create a new album."
     10.times { @album.sources.build} 
   end
 
   def create
-  @album = current_user.albums.build(params[:album])
+    @album = current_user.albums.build(params[:album])
+    authorize! :create, @album, message: "You need to be a member to create a new album."
     if @album.save
       flash[:notice] = "Album was saved."
       redirect_to @album
@@ -27,10 +30,12 @@ class AlbumsController < ApplicationController
 
   def edit
     @album = Album.find(params[:id])
+    authorize! :edit, @album, message: "You need to own the album to edit it."
   end
 
   def update
     @album = Album.find(params[:id])
+    authorize! :update, @album, message: "You need to own the album to edit it."
     if @album.update_attributes(params[:album])
       flash[:notice] = "Album was updated."
       redirect_to @album
