@@ -44,4 +44,6 @@ class AlbumsController < ApplicationController
       render :edit
     end
   end
+
+  
 end

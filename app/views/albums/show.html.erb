@@ -7,6 +7,10 @@
       <div class="media-body">
         <h4 class="media-heading">
           <%= source.url %>
+            <div class="hidden_result">
+              <%= client = Tumblr::Client.new %>
+              <%= client.posts("#{source.url}", :type => "photo", :limit => 10)%>
+            </div>
         </h4>
       
       </div>
@@ -15,4 +19,20 @@
 
   <% if can? :edit, @album %>
     <%= link_to "Edit", edit_album_path(@album), class: 'btn btn-mini' %>
+  
   <% end %>
+
+  <div> 
+  <%= link_to "Preview", class: 'btn btn-mini' %>
+   </div> 
+
+  <div> 
+  <div id='slider' class='swipe'>
+    <div class='swipe-wrap'>
+      <div>http://overlandia.mx/image/64528813655</div>
+      <div>http://24.media.tumblr.com/ad8afe7b7b112c86a51fdc12552aa2e7/tumblr_muf6341w8h1r3b2gao1_1280.png</div>
+      <div></div>
+    </div>
+</div>
+      
+  </div>
