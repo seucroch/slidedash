@@ -17,7 +17,19 @@
 
 $(document).ready(function() {
   $(".js-swiper_viewer").click(function() {
-    window.mySwipe = Swipe(document.getElementById('slider'));
+    var elem = document.getElementById('mySwipe');
+window.mySwipe = Swipe(elem, {
+   startSlide: 0,
+   speed: 300,
+   auto: 10000,
+   continuous: true,
+  // disableScroll: true,
+  // stopPropagation: true,
+  // callback: function(index, element) {},
+  // transitionEnd: function(index, element) {}
+});
+
     return false;
   });
 });
+
