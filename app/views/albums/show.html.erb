@@ -9,8 +9,10 @@
           <%= source.url %>
             <div class="hidden_result">
               <% client = Tumblr::Client.new %>
-              <% result = client.posts("#{source.url}", :type => "photo", :limit => 3) %>
-              <%= result.count %>
+              <% result = client.posts("#{source.url}", :type => "photo", :limit => 10) %>
+              <% result['posts'].to_a.each do |post| %>
+                <%= post['photos'][0]['alt_sizes'][0]['url'] %><br><br>
+              <% end %>
             </div>
         </h4>
       
