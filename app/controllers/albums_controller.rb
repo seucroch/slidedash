@@ -4,11 +4,19 @@ class AlbumsController < ApplicationController
 
   end
 
-  def show
-    @album = Album.find(params[:id])
+   def show
+    @album = Album.find(167) 
     @sources = @album.sources
-    @source = Source.new
-  end
+    #@source = Source.new
+    @urls =  Array.new
+    @client = Tumblr::Client.new
+    @sources.each do |source|
+      @result = @client.posts("#{source.url}", :type => "photo", :limit => 50)
+      @result['posts'].to_a.each do |post|
+        @urls << post['photos'][0]['alt_sizes'][0]['url']
+      end
+    end
+  end  
 
   def new
     @album = Album.new 

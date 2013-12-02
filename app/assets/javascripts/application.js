@@ -33,7 +33,7 @@ $(document).ready(function() {
     $(".modal_viewer").click(function() {
       $('#myModal').modal('show')
          $('.carousel').carousel({
-            interval: 1000
+            interval: 5000
           })
       return false;
 
