@@ -5,7 +5,7 @@ class AlbumsController < ApplicationController
   end
 
    def show
-    @album = Album.find(167) 
+    @album = Album.find(params[:id]) 
     @sources = @album.sources
     #@source = Source.new
     @urls =  Array.new
