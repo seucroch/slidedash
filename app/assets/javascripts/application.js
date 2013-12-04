@@ -20,7 +20,7 @@ $(document).ready(function() {
   $(".modal_viewer").click(function() {
       $('#myModal').modal('show')
          $('.carousel').carousel({
-            interval: 5000 
+            interval: 5000, 
             pause: 'hover'
           })
       return false;
