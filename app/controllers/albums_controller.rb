@@ -7,7 +7,7 @@ class AlbumsController < ApplicationController
    def show
     @album = Album.find(params[:id]) 
     @sources = @album.sources
-    #@source = Source.new
+    @trasitions = @album.transition_time
     @urls =  Array.new
     @client = Tumblr::Client.new
     @sources.each do |source|
