@@ -16,16 +16,15 @@
 //= require_tree .
 
 $(document).ready(function() {
-   
-      $(".modal_viewer").click(function() {
-          $('#myModal').modal('show')
-             $('.carousel').carousel({
-              interval: 10000
-              pause: 'false'
-             })
-            return false;
-           });
-       });
-   
+  
+  $(".modal_viewer").click(function() {
+      $('#myModal').modal('show')
+         $('.carousel').carousel({
+            interval: 5000 
+            pause: 'hover'
+          })
+      return false;
+
+    });
  });
 

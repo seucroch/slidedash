@@ -23,7 +23,7 @@ end
 
 u = User.first
 u.skip_reconfirmation!
-u.update_attributes(name: 'Pablo Seuc-Rocher', email: 'seucroch@hotmail.com', password: 'helloworld', password_confirmation: 'helloworld')
+u.update_attributes(name: 'Mr Admin', email: 'mradmin@gmail.com', password: 'helloworld', password_confirmation: 'helloworld', role: 'admin')
 
 puts "Seed finished"
 puts "#{User.count} users created"
