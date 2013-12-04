@@ -9,14 +9,11 @@ body {
   background-origin: initial;
   background-clip: initial;
   background-color: initial;
-}
-
-
-.container {
   padding: 50px;
-  
-
 }
+
+
+
 
 .nav {
  color: #eeeeee;
@@ -35,4 +32,38 @@ body {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
+}
+
+.l-site-header {
+padding-top: 14px;
+padding-bottom: 14px;
+}
+
+.non-forced-fullwidth .l-site-header {
+max-width: 950px;
+margin-left: auto;
+margin-right: auto;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+.non-forced-fullwidth .l-site-header>.l-site-header-logo {
+width: 11.57895%;
+float: left;
+margin-right: 1.05263%;
+}
+
+.slidedash-logo {
+position: relative;
+display: block;
+width: 83px;
+height: 22px;
+overflow: hidden;
+}
+
+.slidedash-logo_image {
+background-image: image-url("slidedash_logo_hrztl.png");
+position: absolute;
+top: -14px;
+left: -14px;
 }

@@ -8,39 +8,48 @@
   </head>
   
   <body>
+      
+        <header class= "l-header">
+          <div class="l-site-header">
+             <div class="l-site-header-logo">
+                <a class="slidedash-logo" href="/welcome/index" title="HOME">
+                    <%= link_to image_tag("slidedash_logo_hrzntl.png", :border=>0)%></a>
+            </div>
+                  <ul class="nav nav-tabs">        
+                    <li><%= link_to "Home", welcome_index_path %></li>            
+                    <li><%= link_to "Learn More", welcome_about_path %></li> 
+                    <li><%= link_to "Albums", albums_path %></li> 
+                      
+                        <div class="pull-right user-info">
+                            <% if current_user %>
+                              Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+                            <% else %>
+                              <%= link_to "Sign In", new_user_session_path %> or 
+                              <%= link_to "Sign Up", new_user_registration_path %>
+                            <% end %>
+                        </div>
+                    </ul>
+              </div>
+          </div>
       <div class="container">
-      <ul class="nav nav-tabs">        
-        <li><%= link_to "Home", welcome_index_path %></li>            
-        <li><%= link_to "Learn More", welcome_about_path %></li> 
-        <li><%= link_to "Albums", albums_path %></li> 
-          
-        <div class="pull-right user-info">
-            <% if current_user %>
-              Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-            <% else %>
-              <%= link_to "Sign In", new_user_session_path %> or 
-              <%= link_to "Sign Up", new_user_registration_path %>
-            <% end %>
-        </div>
-      </ul>
-    </br>
-      <% if flash[:notice] %>
-        <div class="alert alert-success">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <%= flash[:notice] %>
-        </div>
-      <% elsif flash[:error] %>
-        <div class="alert alert-error">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <%= flash[:error] %>
-        </div>
-      <% elsif flash[:alert] %>
-        <div class="alert">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <%= flash[:alert] %>
-        </div>
-     <% end %>
-        
+        </br>
+          <% if flash[:notice] %>
+            <div class="alert alert-success">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <%= flash[:notice] %>
+            </div>
+          <% elsif flash[:error] %>
+            <div class="alert alert-error">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <%= flash[:error] %>
+            </div>
+          <% elsif flash[:alert] %>
+            <div class="alert">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <%= flash[:alert] %>
+            </div>
+         <% end %>
+      </div>
     <%= yield %>
     </div>
      <%= javascript_include_tag "application" %>
