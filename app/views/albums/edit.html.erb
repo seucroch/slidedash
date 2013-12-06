@@ -1,13 +1,15 @@
-<h1>Edit Album</h1>
+<h1>Edit Slideshow</h1>
 
 <div class="row">
   <div class="span-6">
     <p>What can you edit?</p>
     <ul>
-      <li>Your album name.</li>
-      <li>The trasition time between images.  In hundreds of a second. Remember:</li>
-      <li>1 second = 100</li>
-      <li>5 seconds = 500</li>
+      <li>Your Slideshow name.
+      </li>
+      <li>The category name.
+      </li>
+      <li>Your Tumblrs: Remeber to not inlcude http:// or https:// when adding the url.
+      </li>
     </ul>
   </div>
   <div class="span-6">
@@ -19,12 +21,7 @@
           <%= f.text_field :title %>
         </div>
       </div>
-      <div class="control-group">
-        <%= f.label :transition_time, class: 'control-label' %>
-        <div class="controls">
-          <%= f.text_field :transition_time%>
-        </div>
-      </div>
+  
       <div class="control-group">
         <%= f.label :category, class: 'control-label' %>
         <div class="controls">

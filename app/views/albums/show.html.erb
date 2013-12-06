@@ -1,5 +1,4 @@
 <h1>Title: <%= @album.title %></h1>
-<h2>Transition time: <%= @album.transition_time  %></h2>
 <h2>Category: <%= @album.category  %></h2>
 
   <% for source in @sources %>
@@ -16,35 +15,27 @@
       </div>
     </div>
   <% end %>
-
-  <% if can? :edit, @album %>
-    <%= link_to "Edit", edit_album_path(@album), class: 'btn ' %>
-  <% end %>
-  
-  <br>
-
-  <div class="modal_viewer">
-    <button type="button" data-toggle="modal" data-target="#myModal">Launch modal</button>
+  <div>
+    <% if can? :edit, @album %>
+      <%= link_to "Edit", edit_album_path(@album), class: 'btn' %>
+    <% end %>
   </div>
-
-     
-      <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-         <div id="myCarousel" class="carousel slide">
-            
-              <!-- Carousel items -->
-              <div class="carousel-inner">
-                   <% @urls.each_with_index do |url,i| %>
-                    <div class="<%= "active" if i == 0 %> item"><%= image_tag url%></div>
-
-              <% end %>
-               
+  <p> </p>
+  <div class="modal_viewer">
+    <button type="button" data-toggle="modal" data-target="#myModal">Launch Slideshow</button>
+  </div>
+  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div id="myCarousel" class="carousel slide">
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+              <% @urls.each_with_index do |url,i| %>
+              <div class="<%= "active" if i == 0 %> item"><%= image_tag url%>
               </div>
-              <!-- Carousel nav -->
-              <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-              <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-        </div> 
-         
-
-
-      </div>
+              <% end %> 
+          </div>
+          <!-- Carousel nav -->
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+      </div> 
+  </div>
   
