@@ -13,14 +13,15 @@
           <div class="l-site-header">
              <div class="l-site-header-logo">
                 <a class="slidedash-logo" href="/welcome/index" title="HOME">
-                    <%= link_to image_tag("slidedash_logo_hrzntl.png", :border=>0)%></a>
+                    <%= image_tag("slidedash_logo_hrzntl.png")%></a>
             </div>
-                  <ul class="nav nav-tabs">        
-                    <li><%= link_to "Home", welcome_index_path %></li>            
-                    <li><%= link_to "Learn More", welcome_about_path %></li> 
-                    <li><%= link_to "Albums", albums_path %></li> 
-                      
+                 
+                    <ul class="nav nav-tabs">        
+                      <li><%= link_to "Home", welcome_index_path %></li>        
+                      <li><%= link_to "Learn More", welcome_about_path %></li> 
+                      <li><%= link_to "Albums", albums_path %></li> 
                         <div class="pull-right user-info">
+
                             <% if current_user %>
                               Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
                             <% else %>
