@@ -1,21 +1,14 @@
-<h1>Title: <%= @album.title %></h1>
-<h2>Category: <%= @album.category  %></h2>
+<div class="span8">
+  <h1>Title: <%= @album.title %>
+  </h1>
+  <h2>Category: <%= @album.category %>
+  </h2>
+</div>
 
-  <% for source in @sources %>
-    <div class="media">
-      <div class="media-body">
-        <h4 class="media-heading">
-          <%= source.url %>
-            <div class="no_hidden_result">
-            <%= @url %>
-            
-            </div>
-        </h4>
-     
-      </div>
-    </div>
-  <% end %>
-  <div>
+<div class="span8">
+  <%= render partial: 'form', locals: { source: @source} %>
+</div>  
+<div>
     <% if can? :edit, @album %>
       <%= link_to "Edit", edit_album_path(@album), class: 'btn' %>
     <% end %>
@@ -24,12 +17,13 @@
   <div class="modal_viewer">
     <button type="button" data-toggle="modal" data-target="#myModal">Launch Slideshow</button>
   </div>
+
   <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div id="myCarousel" class="carousel slide">
           <!-- Carousel items -->
           <div class="carousel-inner">
               <% @urls.each_with_index do |url,i| %>
-              <div class="<%= "active" if i == 0 %> item"><%= image_tag url%>
+              <div class="<%= "active" if i == 0 %> item"><%= image_tag url %>
               </div>
               <% end %> 
           </div>
@@ -38,4 +32,4 @@
           <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
       </div> 
   </div>
-  
+

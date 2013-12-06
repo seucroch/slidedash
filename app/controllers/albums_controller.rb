@@ -9,13 +9,18 @@ class AlbumsController < ApplicationController
     @sources = @album.sources
     @trasitions = @album.transition_time
     @urls =  Array.new
+    @post_urls = Array.new
     @client = Tumblr::Client.new
     @sources.each do |source|
       @result = @client.posts("#{source.url}", :type => "photo", :limit => 50)
       @result['posts'].to_a.each do |post|
         @urls << post['photos'][0]['alt_sizes'][0]['url']
-      end
-    end
+        end
+      @post_result = @client.posts("#{source.url}", :type => "photo", :limit => 50)
+      @post_result['posts'].to_a.each do |post|
+        @post_urls << post['post_url'][0]
+        end
+     end 
   end  
 
   def new
