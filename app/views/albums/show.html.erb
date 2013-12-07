@@ -10,14 +10,14 @@
 </div>  
 <div>
     <% if can? :edit, @album %>
-      <%= link_to "Edit", edit_album_path(@album), class: 'btn btn-primary btn-mini' %>
-      <%= link_to "Delete ", @album, method: :delete, class: 'btn btn-primary btn-mini', confirm: 'Are you sure you want to delete this slideshow' %>
+      <%= link_to "Edit", edit_album_path(@album), class: 'btn btn-primary' %>
+      <%= link_to "Delete ", @album, method: :delete, class: 'btn btn-primary', confirm: 'Are you sure you want to delete this slideshow' %>
     <% end %>
   </div>
   <p> </p>
   <div class="modal_viewer">
   
-    <%= link_to "Launch Slideshow", class: 'btn btn-primary btn-mini' %>
+    <%= link_to "Launch Slideshow", class: 'btn btn-primary' %>
   </div>
 
   <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
