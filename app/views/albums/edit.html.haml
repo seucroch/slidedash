@@ -1,0 +1,26 @@
+%h1 Edit Slideshow
+%p What can you edit?
+%ul
+  %li
+    Your Slideshow name.
+  %li
+    The category name.
+  %li
+    Your Tumblrs: Remeber to not inlcude http:// or https:// when adding the url.
+= form_for @album, html: { class: 'form-horizontal' } do |f|
+  .control-group
+    = f.label :title, class: 'control-label'
+    .controls
+      = f.text_field :title
+  .control-group
+    = f.label :category, class: 'control-label'
+    .controls
+      = f.text_field :category
+  = f.fields_for :sources do |builder|
+    .control-group
+      = builder.label :url, class: 'control-label'
+      .controls
+        = builder.text_field :url, :rows => 10
+  .control-group
+    .controls
+      = f.submit "Save", class: 'btn btn-primary'

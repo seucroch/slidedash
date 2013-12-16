@@ -1,0 +1,14 @@
+%div
+  %h1 Turn any Tumblr into a slideshow.
+  %br/
+  %p
+    = link_to "View", albums_path, class: 'btn btn-primary btn-large'
+    a slideshow or
+    \#{link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary btn-large'} to create your own!
+%div
+  - @albums.each do |album|
+    %h4.media-heading
+      = link_to album.title, album
+    %small
+      submitted #{time_ago_in_words(album.created_at)} ago by  #{album.user.name}
+      %br/

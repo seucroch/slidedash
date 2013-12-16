@@ -1,0 +1,9 @@
+%h1 All Slideshows
+- @albums.each do |album|
+  = link_to album.title, album
+  %small
+    submitted #{time_ago_in_words(album.created_at)} ago by  #{album.user.name}
+    %br/
+%div
+  - if can? :create, Album
+    = link_to "New Slideshow", new_album_path, class: 'btn btn-primary btn-mini'

@@ -1,66 +1,7 @@
-$font-family-sans-serif: 'Ubuntu', 'Helvetica Neue', sans-serif;
-$font-size-base: 17px;
+$font-family-sans-serif:'Helvetica Neue';
+$headings-font-family: 'Georgia';
+$font-size-base: 55px;
+$text-color: #fff;
 
-body {
-  background-image: image-url("background.png");
-  background-position-x: initial;
-  background-position-y: initial;
-  background-size: initial;
-  background-repeat-x: repeat;
-  background-repeat-y: repeat;
-  background-attachment: initial;
-  background-origin: initial;
-  background-clip: initial;
-  background-color: initial;
-  padding: 50px;
-}
 
-.nav {
- color: #eeeeee;
-  opacity: .85;
-  border-radius: 3px;
-}
-
-.hero-unit {
-  padding: 60px;
-  margin-bottom: 30px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  color: inherit;
-  background-color: #eeeeee;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-}
-
-.l-site-header {
-padding-top: 14px;
-padding-bottom: 14px;
-}
-
-.non-forced-fullwidth .l-site-header {
-max-width: 950px;
-margin-left: auto;
-margin-right: auto;
-padding-left: 10px;
-padding-right: 10px;
-}
-
-.non-forced-fullwidth .l-site-header>.l-site-header-logo {
-width: 11.57895%;
-float: left;
-margin-right: 1.05263%;
-}
-
-.slidedash-logo {
-position: relative;
-display: block;
-overflow: hidden;
-}
-
-.slidedash-logo_image {
-position: absolute;
-top: -14px;
-left: -14px;
-}
+  

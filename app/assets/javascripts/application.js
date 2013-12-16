@@ -15,16 +15,14 @@
 //= require bootstrap
 //= require_tree .
 
+
 $(document).ready(function() {
-  
-  $(".modal_viewer").click(function() {
-      $('#myModal').modal('show')
+  $(".modal_viewer a").click(function() {
+      $('#myModal').modal('show');
          $('.carousel').carousel({
             interval: 5000, 
             pause: 'hover'
-          })
+          });
       return false;
-
     });
  });
-

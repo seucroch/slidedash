@@ -1,0 +1,29 @@
+%h1 New Slideshow
+.row
+  .span-6
+    %p Guidelines for new slideshow:
+    %ul
+      %li
+        First Choose a great name.
+      %li
+        Give your slideshow a category.
+      %li
+        When adding your Tumblrs to the slideshow LEAVE off the "http://" and just type the name of the tumblr (ex. "yourfavortiesite.tumblr.com").
+  .span-6
+    = form_for @album, html: { class: 'form-horizontal' } do |f|
+      .control-group
+        = f.label :title, class: 'control-label'
+        .controls
+          = f.text_field :title
+      .control-group
+        = f.label :category, class: 'control-label'
+        .controls
+          = f.text_field :category
+      = f.fields_for :sources do |builder|
+        .control-group
+          = builder.label :url, class: 'control-label'
+          .controls
+            = builder.text_field :url, :rows => 10
+      .control-group
+        .controls
+          = f.submit "Save", class: 'btn' 
