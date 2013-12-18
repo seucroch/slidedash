@@ -34,7 +34,7 @@ gem 'tumblr-rb'
 gem 'puma'
 gem 'newrelic_rpm'
 gem 'haml'
-gem 'sass'
+
 
 
 # To use ActiveModel has_secure_password

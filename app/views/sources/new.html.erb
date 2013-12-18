@@ -1,0 +1,24 @@
+<h1>Sources#new</h1>
+
+<%= form_for [album, source], remote: true do |f| %>
+  <% if source.errors.any? %>
+    <div class="alert alert-block">
+      <h4>There are <%= pluralize(source.errors.count, "error") %> errors.</h4>
+      <ul>
+        <% source.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= control_group_tag(source.errors[:url]) do %>
+    <div class="controls">
+      <%= f.field :url %>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit "Add Source", class: 'btn' %>
+    </div>
+  </div>
+<% end %>
