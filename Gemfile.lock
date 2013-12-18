@@ -168,6 +168,7 @@ DEPENDENCIES
   pg
   puma
   rails (= 3.2.13)
+  sass
   sass-rails (>= 3.2)
   simple_form
   sqlite3
