@@ -38,4 +38,7 @@ Slidedash::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }  
   config.action_mailer.delivery_method = :smtp  
   config.action_mailer.perform_deliveries = true
+  
+  # Configure static asset server for development with Cache-Control for performance
+  config.serve_static_assets = false
 end
